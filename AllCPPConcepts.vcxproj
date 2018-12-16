@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="ConceptList.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -143,8 +144,10 @@
     <ClInclude Include="concepts\CallbackFunction.h" />
     <ClInclude Include="concepts\CopyConstructor.h" />
     <ClInclude Include="concepts\DSLinkList.h" />
+    <ClInclude Include="concepts\DS_map_multimap.h" />
     <ClInclude Include="concepts\FriendFunction.h" />
     <ClInclude Include="concepts\LambdaFunction.h" />
+    <ClInclude Include="concepts\LambdaFunctionPtr.h" />
     <ClInclude Include="concepts\OperatorOverloading.h" />
     <ClInclude Include="concepts\Palindrome.h" />
     <ClInclude Include="concepts\QuickTest.h" />
@@ -153,6 +156,7 @@
     <ClInclude Include="concepts\SmartPointer.h" />
     <ClInclude Include="concepts\TemplateFunction.h" />
     <ClInclude Include="concepts\VariousAlgoImplementation.h" />
+    <ClInclude Include="concepts\VirtualBaseClass.h" />
     <ClInclude Include="concepts\VirtualFunction.h" />
     <ClInclude Include="concepts\VolatileKeyword.h" />
     <ClInclude Include="stdafx.h" />

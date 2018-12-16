@@ -21,6 +21,10 @@
 #include "concepts\BinarySearchTree.h"
 #include "concepts\BinaryTree.h"
 #include "concepts\Palindrome.h"
+#include "concepts\VirtualBaseClass.h"
+#include "concepts\SmartPointer.h"
+#include "concepts\LambdaFunctionPtr.h"
+#include "concepts\DS_map_multimap.h"
 
 int main()
 {
@@ -30,10 +34,10 @@ int main()
 	{
 		std::cout << std::endl;
 		std::cout << "****************************************************************************" << std::endl;
-		std::cout << "1) Implementation for Copy Constructor." << std::endl;
-		std::cout << "2) Implementation for Virtual Function." << std::endl;
-		std::cout << "3) Implementation for Friend Function." << std::endl;
-		std::cout << "4) Implementation for Operator Overloading." << std::endl;
+		std::cout << "1) Copy Constructor." << std::endl;
+		std::cout << "2) Virtual Function." << std::endl;
+		std::cout << "3) Friend Function." << std::endl;
+		std::cout << "4) Operator Overloading." << std::endl;
 		std::cout << "5) Quick Test." << std::endl;
 		std::cout << "6) Volatile Variable." << std::endl;
 		std::cout << "7) Callback Function." << std::endl;
@@ -46,6 +50,11 @@ int main()
 		std::cout << "14) Binary Search Tree." << std::endl;
 		std::cout << "15) Binary Tree." << std::endl;
 		std::cout << "16) Check palindrome." << std::endl;
+		std::cout << "17) Virtual Base Class (Dimand Problem)." << std::endl;
+		std::cout << "18) Smart Pointer." << std::endl;
+		std::cout << "19) Lambda Virtual Usages." << std::endl;
+		std::cout << "20) Name Mangling." << std::endl;
+		std::cout << "21) Data Structure: map vs multimap." << std::endl;
 		std::cout << "100) Exit from program" << std::endl;
 		std::cout << "****************************************************************************" << std::endl;
 		std::cout << "Please select any of the option above:" << std::endl;
@@ -58,8 +67,23 @@ int main()
 			std::cout << "Implementation for Copy Constructor..." << std::endl;
 			CopyConstructor::BaseClass bClass1;
 			bClass1.setVal(10);
+			bClass1.initializeMessageToken();
 			CopyConstructor::BaseClass bClass2 = bClass1;
 			std::cout << "Val is:" << bClass2.getVal() << std::endl;
+			std::cout << "\nBase Class:\n";
+			bClass1.getMessageToken();
+			std::cout << "\n\nDerived Class:\n";
+			bClass2.getMessageToken();
+
+			//Update memory
+			std::cout << "\n\n";
+			bClass1.updateMessageToken();
+			bClass2.getMessageToken();
+
+			//Clean memory
+			std::cout << "\n\n";
+			bClass1.cleanMessageToken();
+			bClass2.getMessageToken();
 		}
 		break;
 		case 2:
@@ -116,7 +140,7 @@ int main()
 		break;
 		case 5:
 		{
-			QuickTest::QuickTest::testFunction();
+			QuickTest::QuickTest::concept01();
 		}
 		break;
 		case 6:
@@ -139,7 +163,7 @@ int main()
 		case 8:
 		{
 			using namespace TemplateFunction;
-
+			/*
 			auto val1 = 0.0f;
 			auto val2 = 0.0f;
 
@@ -148,7 +172,12 @@ int main()
 			std::cout << "Enter second value:";
 			std::cin >> val2;
 
-			std::cout << sum<float>(val1, val2) << std::endl;
+			std::cout << sum<float>(val1, val2) << std::endl;*/
+
+			CClass cobj;
+			PClass pobj;
+
+			IsDerivedFrom(cobj, pobj);
 		}
 		break;
 		case 9:
@@ -335,6 +364,51 @@ int main()
 				std::cout << "\nString is not palindrome.";
 			}
 
+		}
+		break;
+		case 17:
+		{
+			using namespace NVirtualBaseClass;
+
+			D dClass;
+			//dClass.display(); //Error
+			dClass.B::display();
+			dClass.C::display();
+			dClass.show();
+		}
+		break;
+		case 18:
+		{
+			using namespace NSmartPointer;
+
+			implementAutoPointer();
+
+			implementUniquePointer();
+		}
+		break;
+		case 19:
+		{
+			using namespace NLambdaFunctionPtr;
+			simpleFunction(10);
+		}
+		break;
+		case 20:
+		{
+			std::cout << "Name Mangling concept is used by the compiler for function overloading." << std::endl;
+		}
+		break;
+		case 21:
+		{
+			using namespace NDSmapVSmultimap;
+
+			BaseClass bClass;
+			bClass.getVowel(0);
+			bClass.getVowel(6);
+			bClass.getVowel(1);
+			bClass.getVowel(3);
+			bClass.getVowel(5);
+
+			bClass.getCompleteVowelList();
 		}
 		break;
 		default:

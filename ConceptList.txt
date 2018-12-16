@@ -1,0 +1,32 @@
+###############################################################################
+Ques-01: What is "Name Mangling"?
+Ans: C++ supports function overloading, i.e., there can be more than one 
+	functions with same name and differences in parameters. How does C++ 
+	compiler distinguishes between different functions when it generates 
+	object code – it changes names by adding information about arguments. 
+	
+	This technique of adding additional information to function names is 
+	called Name Mangling. Use command nm to see the more information on 
+	object file (Ex: g++ -c file.cpp & nm file.o)
+###############################################################################
+Ques-02: Difference between "map" and "multimap"?
+###############################################################################
+Ques-03: What is "Context Swithcing"?
+###############################################################################
+Ques-04: What is "QT MOC"?
+###############################################################################
+Ques-05: What is "Callback"?
+###############################################################################
+Ques-06: Difference between "map" and "sets"?
+###############################################################################
+Ques-07: map internal usages tree or what?
+###############################################################################
+Ques-08: Difference between "Copy Constructor", "Move Constructor", 
+"Copy Assignment Operator", "Move Assignment Operator"?
+###############################################################################
+Ques-09: Understand pthread and with function parameter?
+###############################################################################
+Ques-10: Diffrent stages of compilation?
+###############################################################################
+Ques-11: Smart Pointer (auto/unique/shared/weak), understand different usages.
+###############################################################################
