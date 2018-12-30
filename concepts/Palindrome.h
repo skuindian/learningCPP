@@ -28,7 +28,7 @@ namespace NPalindrome
 		char ch;
 
 		char *orgStr = str;
-		int sizeOfStr = strlen(str);
+		int sizeOfStr = static_cast<int>(strlen(str));
 		//int sizeStr = sizeof(str); //Will not work
 		char *newStr = new char[sizeOfStr + 1];
 		newStr[sizeOfStr] = '\0';
@@ -56,7 +56,7 @@ namespace NPalindrome
 
 	bool checkStringPalindromeWithoutRev(char *str)
 	{
-		int size = strlen(str) - 1;
+		int size = static_cast<int>(strlen(str) - 1);
 		for (int index = 0; index <= strlen(str); index++)
 		{
 			if (str[index] != str[size--])

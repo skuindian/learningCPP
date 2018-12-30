@@ -25,6 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+    <Text Include="ConceptList.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -91,6 +92,15 @@
       <Filter>Header Files\Concepts</Filter>
     </ClInclude>
     <ClInclude Include="concepts\DS_map_multimap.h">
+      <Filter>Header Files\Concepts</Filter>
+    </ClInclude>
+    <ClInclude Include="concepts\DesignPattern_Singleton.h">
+      <Filter>Header Files\Concepts</Filter>
+    </ClInclude>
+    <ClInclude Include="concepts\MemberVsPointerMember.h">
+      <Filter>Header Files\Concepts</Filter>
+    </ClInclude>
+    <ClInclude Include="concepts\CopyAndMoveConstructor.h">
       <Filter>Header Files\Concepts</Filter>
     </ClInclude>
   </ItemGroup>

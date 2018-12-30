@@ -25,6 +25,13 @@
 #include "concepts\SmartPointer.h"
 #include "concepts\LambdaFunctionPtr.h"
 #include "concepts\DS_map_multimap.h"
+#include "concepts\MemberVsPointerMember.h"
+#include "concepts\CopyAndMoveConstructor.h"
+
+//Design Pattern
+#include "concepts\DesignPattern_Singleton.h"
+
+NDPSingleton::SingletonClass *NDPSingleton::SingletonClass::mSingletonClass = nullptr;
 
 int main()
 {
@@ -55,6 +62,9 @@ int main()
 		std::cout << "19) Lambda Virtual Usages." << std::endl;
 		std::cout << "20) Name Mangling." << std::endl;
 		std::cout << "21) Data Structure: map vs multimap." << std::endl;
+		std::cout << "22) Member variable vs Pointer member variable." << std::endl;
+		std::cout << "23) Copy And Move constructor." << std::endl;
+		std::cout << "51) Design Pattern: Singleton Pattern" << std::endl;
 		std::cout << "100) Exit from program" << std::endl;
 		std::cout << "****************************************************************************" << std::endl;
 		std::cout << "Please select any of the option above:" << std::endl;
@@ -402,13 +412,66 @@ int main()
 			using namespace NDSmapVSmultimap;
 
 			BaseClass bClass;
-			bClass.getVowel(0);
-			bClass.getVowel(6);
-			bClass.getVowel(1);
-			bClass.getVowel(3);
-			bClass.getVowel(5);
+			//bClass.getVowel(0);
+			//bClass.getVowel(6);
+			//bClass.getVowel(1);
+			//bClass.getVowel(3);
+			//bClass.getVowel(5);
 
-			bClass.getCompleteVowelList();
+			//bClass.getCompleteVowelList();
+			//bClass.getAlphabet(4);
+			//std::cout << "All Elements:" << std::endl;
+			//bClass.getCompleteAlphabetList();
+
+			bClass.getColorItems("blue");
+		}
+		break;
+		case 22:
+		{
+			using namespace NMemberVsPointerMember;
+
+			DClass dClass;
+			AClass aClass;
+
+			std::cout << sizeof(dClass) << "," << sizeof(aClass) << std::endl;
+
+		}
+		break;
+		case 23:
+		{
+			using namespace NCopyAndMoveConstructor;
+
+			DummyClass *dClass = new DummyClass();
+			std::cout << dClass->getValue() << std::endl;
+
+			DummyClass *aClass = new DummyClass(*dClass);
+			std::cout << aClass->getValue() << std::endl;
+
+			DummyClass *bClass = new DummyClass(static_cast<DummyClass &&>(*dClass));
+			std::cout << dClass->getValue() << std::endl;
+			std::cout << bClass->getValue() << std::endl;
+
+		}
+		break;
+		case 51:
+		{
+			using namespace NDPSingleton;
+
+			SingletonClass *singletonPattern = SingletonClass::getInstance();
+			singletonPattern->doTask();
+
+			//Copy Constructor
+			//SingletonClass *singleton1 = new SingletonClass(*singletonPattern);
+			//singleton1->doTask();
+
+			SingletonClass *singleton2 = singletonPattern;
+			singleton2->doTask();
+			//delete singleton2;
+			//singleton2 = nullptr;
+
+			SingletonClass *singleton3 = nullptr;
+			singleton3 = singletonPattern;
+			singleton3->doTask();
 		}
 		break;
 		default:

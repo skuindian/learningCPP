@@ -142,12 +142,15 @@
     <ClInclude Include="concepts\BinarySearchTree.h" />
     <ClInclude Include="concepts\BinaryTree.h" />
     <ClInclude Include="concepts\CallbackFunction.h" />
+    <ClInclude Include="concepts\CopyAndMoveConstructor.h" />
     <ClInclude Include="concepts\CopyConstructor.h" />
+    <ClInclude Include="concepts\DesignPattern_Singleton.h" />
     <ClInclude Include="concepts\DSLinkList.h" />
     <ClInclude Include="concepts\DS_map_multimap.h" />
     <ClInclude Include="concepts\FriendFunction.h" />
     <ClInclude Include="concepts\LambdaFunction.h" />
     <ClInclude Include="concepts\LambdaFunctionPtr.h" />
+    <ClInclude Include="concepts\MemberVsPointerMember.h" />
     <ClInclude Include="concepts\OperatorOverloading.h" />
     <ClInclude Include="concepts\Palindrome.h" />
     <ClInclude Include="concepts\QuickTest.h" />
